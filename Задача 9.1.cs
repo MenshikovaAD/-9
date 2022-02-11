@@ -76,27 +76,8 @@ namespace Урок_9
             int one = X + Y;
             int two = X - Y;
             int three = X * Y;
-            double four = ((double)X / Y);
-            try
-            {
-                four = ((double)X / Y);
-
-            }
-            catch (DivideByZeroException ex) when (X == 0 || Y == 0)
-            {
-                Console.WriteLine("Ошибка! Деление на 0");
-                Console.ReadKey();
-            }
-            catch (DivideByZeroException ex) when (X == 0 && Y == 0)
-            {
-                Console.WriteLine("Ошибка!");
-                Console.ReadKey();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Ошибка!");
-                Console.ReadKey();
-            }
+            double four=((double)X / Y); 
+           
             #region
             while (true)
             {
@@ -140,7 +121,22 @@ namespace Урок_9
                     break;
 
                 }
-                
+                if ((X == 0) || (Y == 0) && (input == 4))
+                {
+                    
+                    Console.WriteLine("Ошибка! Деление на 0");
+                    Console.ReadKey();
+                    break;
+
+                }
+                if ((X == 0) && (Y == 0) && (input == 4))
+                {
+
+                    Console.WriteLine("Ошибка! Деление на 0");
+                    Console.ReadKey();
+                    break;
+
+                }
                 if (input == 1)
                 {
                     Console.WriteLine("Результат: {0}", one);
@@ -172,7 +168,28 @@ namespace Урок_9
 
             Console.ReadKey();
 
+            // try
+           // {
+              //  four = (
 
+
+
+           // }
+           // catch (DivideByZeroException) when (X == 0 || Y == 0)
+           // {
+               // Console.WriteLine("Ошибка! Деление на 0");
+               // Console.ReadKey();
+           // }
+           // catch (DivideByZeroException) when (X == 0 && Y == 0)
+            //{
+               // Console.WriteLine("Ошибка!");
+              //  Console.ReadKey();
+           // }
+           // catch (Exception ex)
+           // {
+             //   Console.WriteLine("Ошибка!");
+            //    Console.ReadKey();
+          //  }
         }
     }
 }
